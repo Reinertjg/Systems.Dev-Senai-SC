@@ -10,7 +10,10 @@ programa
 	leia(numero1)
 	escreva("Informe o número 2: ")
 	leia(numero2)
-
+	se (numero1 == 0 )
+		numero1 = 1
+	se (numero2 == 0 )
+		numero2 = 1
 	divisao = (numero1 / numero2) 
 
 	escreva("Resultado: "+divisao)
