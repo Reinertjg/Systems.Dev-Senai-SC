@@ -11,7 +11,7 @@ programa
 	escreva("Informe o número 2: ")
 	leia(numero2)
 
-	multiplicacao = (numero1 + numero2) 
+	multiplicacao = (numero1 * numero2) 
 
 	escreva("Resultado: "+multiplicacao)
 
