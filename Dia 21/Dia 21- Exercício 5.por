@@ -5,7 +5,7 @@ programa
 	{
 		real numero1 = 0.0, numero2 = 0.0
 		real resultado = 0.0
-		cadeia operacao = "", soma = "", subtracao = "", divisao = "", multiplicacao =""
+		cadeia operacao = "", soma = "", subtracao = "", divisao = "", multiplicacao =""
 	
 		escreva("Selecione a operação(soma, subtracao, divisao, multiplicacao: ")
 		leia(operacao)
@@ -36,7 +36,7 @@ programa
 			leia(numero1)
 			escreva("Informe o número 2: ")
 			leia(numero2)
-			resultado = (numero1 - numero2) 
+			resultado = (numero1 * numero2) 
 		
 		}			
 		
