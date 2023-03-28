@@ -10,26 +10,19 @@ programa
 	
 		escreva("Selecione a operação( +, -, / ou * ): ")
 		leia(operacao)
-
-		se(operacao == "+"){
-			escreva("Informe o número 1: ")
+		
+		escreva("Informe o número 1: ")
 			leia(numero1)
 			escreva("Informe o número 2: ")
 			leia(numero2)
+
+		se(operacao == "+"){
 			resultado = (numero1 + numero2) 
 			
 		}se(operacao == "-"){
-			escreva("Informe o número 1: ")
-			leia(numero1)
-			escreva("Informe o número 2: ")
-			leia(numero2)
 			resultado = (numero1 - numero2) 
 		
 		}se(operacao == "/"){
-			escreva("Informe o número 1: ")
-			leia(numero1)
-			escreva("Informe o número 2: ")
-			leia(numero2)
 				se (numero1 == 0 )
 					numero1 = 1
 				se (numero2 == 0 )
@@ -37,29 +30,22 @@ programa
 				resultado = (numero1 / numero2) 
 		
 		}se(operacao == "*"){
-			escreva("Informe o número 1: ")
-			leia(numero1)
-			escreva("Informe o número 2: ")
-			leia(numero2)
+
 			resultado = (numero1 * numero2) 
 		
 		}			
 		escreva("Selecione a segunda operação( +, -, / ou * ): ")
 		leia(operacao)
+		escreva("Informe o número 3: ")
+		leia(numero3)
 		
 		se(operacao == "+"){
-			escreva("Informe o número 3: ")
-			leia(numero3)
 			resultado2 = (resultado + numero3) 
 			
 		}se(operacao == "-"){
-			escreva("Informe o número 3: ")
-			leia(numero3)
 			resultado2 = (resultado - numero3) 
 			
 		}se(operacao == "/"){
-			escreva("Informe o número 3: ")
-			leia(numero3)
 				se (numero1 == 0 )
 					numero1 = 1
 				se (numero2 == 0 )
@@ -67,8 +53,6 @@ programa
 			resultado2 = (resultado / numero3)
 			
 		}se(operacao == "*"){
-			escreva("Informe o número 3: ")
-			leia(numero3)
 			resultado2 = (resultado * numero3)
 		}	
 		
