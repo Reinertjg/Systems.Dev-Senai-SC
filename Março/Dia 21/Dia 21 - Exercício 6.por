@@ -5,7 +5,7 @@ programa
 	{
 		real numero1 = 0.0, numero2 = 0.0, numero3 = 0.0
 		real resultado = 0.0,  resultado2 = 0.0
-		cadeia operacao = "", operacao2 = ""
+		cadeia operacao = ""
 
 	
 		escreva("Selecione a operação( +, -, / ou * ): ")
@@ -45,19 +45,19 @@ programa
 		
 		}			
 		escreva("Selecione a segunda operação( +, -, / ou * ): ")
-		leia(operacao2)
+		leia(operacao)
 		
-		se(operacao2 == "+"){
+		se(operacao == "+"){
 			escreva("Informe o número 3: ")
 			leia(numero3)
 			resultado2 = (resultado + numero3) 
 			
-		}se(operacao2 == "-"){
+		}se(operacao == "-"){
 			escreva("Informe o número 3: ")
 			leia(numero3)
 			resultado2 = (resultado - numero3) 
 			
-		}se(operacao2 == "/"){
+		}se(operacao == "/"){
 			escreva("Informe o número 3: ")
 			leia(numero3)
 				se (numero1 == 0 )
@@ -66,7 +66,7 @@ programa
 					numero2 = 1
 			resultado2 = (resultado / numero3)
 			
-		}se(operacao2 == "*"){
+		}se(operacao == "*"){
 			escreva("Informe o número 3: ")
 			leia(numero3)
 			resultado2 = (resultado * numero3)
@@ -80,43 +80,24 @@ programa
 	
 	
 //Situação problema:
-
 //Crie um algoritmo que realize as contas matemáticas de soma, subtração, multiplicação e divisão entre dois números.
-
 //Na sequencia o programa deverá realizar uma segunda conta matemática entre o resultado da primeira conta e um novo numero que será chamado de numero 3.
-
 //O programa deverá realizar a pergunta ao usuário podendo escolher entre as operações.
-
 //Quando o usuário informar "+" o programa irá realizar a soma.
-
 //Quando o usuário informar "-" o programa irá realizar a subtração.
-
 //Quando o usuário informar "/" o programa irá realizar a divisão.
-
 //Quando o usuário informar "*" o programa irá realizar a multiplicação.
-
 //Obs.: O programa não poderá permitir realizar a conta de divisão onde o dividendo for igual a zero e assim substituir por 1 para evitar a divisão por zero.
-
 //Exemplo de execução
 
-
-
 //selecione a primeira operação: ___
-
 //Número 1: _____
-
 //Número 2: _____
-
 //Resultado1: ______
-
 //Selecione a segunda operação: ___
-
 //Número 3: _____
-
 //Resultado 2*: ______
-
 //-------------------------------------------------------------
-
 //O resultado 2 será a soma ou subtração ou divisão ou multiplicação do resultado 2 com o numero 3.
 
 	}
