@@ -23,11 +23,11 @@ programa
 			resultado = (numero1 - numero2) 
 		
 		}se(operacao == "/"){
-				se (numero1 == 0 )
-					numero1 = 1
-				se (numero2 == 0 )
-					numero2 = 1
-				resultado = (numero1 / numero2) 
+			se (numero1 == 0 )
+				numero1 = 1
+			se (numero2 == 0 )
+				numero2 = 1
+			resultado = (numero1 / numero2) 
 		
 		}se(operacao == "*"){
 
