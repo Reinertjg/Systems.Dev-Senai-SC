@@ -12,9 +12,9 @@ programa
 		leia(operacao)
 		
 		escreva("Informe o número 1: ")
-			leia(numero1)
-			escreva("Informe o número 2: ")
-			leia(numero2)
+		leia(numero1)
+		escreva("Informe o número 2: ")
+		leia(numero2)
 
 		se(operacao == "+"){
 			resultado = (numero1 + numero2) 
