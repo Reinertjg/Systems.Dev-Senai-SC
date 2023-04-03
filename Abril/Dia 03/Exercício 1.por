@@ -18,23 +18,23 @@ programa
 		escreva("Informe o Numero 5: ")
 		leia(numero5)
 
-		se(numero1 > 0){
+		se(numero1 >= 0){
 			positivo += 1
 		}senao
 			negativo += 1
-		se(numero2 > 0){
+		se(numero2 >= 0){
 			positivo += 1
 		}senao
 			negativo += 1
-		se(numero3 > 0){
+		se(numero3 >= 0){
 			positivo += 1
 		}senao
 			negativo += 1
-		se(numero4 > 0){
+		se(numero4 >= 0){
 			positivo += 1
 		}senao
 			negativo += 1
-		se(numero5 > 0){
+		se(numero5 >= 0){
 			positivo += 1
 		}senao
 			negativo += 1
