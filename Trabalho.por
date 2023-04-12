@@ -18,15 +18,18 @@ funcao inicio() {
 			litrosTotal = (valorColocado / etanol)
 			valorPorLitro = etanol
 			
-		}se(tipoCombustivel == "gasolina comum"){
+		}
+		se(tipoCombustivel == "gasolina comum"){
 			litrosTotal = valorColocado / gComum
 			valorPorLitro = gComum
 			
-		}se(tipoCombustivel == "gasolina aditivada"){
+		}
+		se(tipoCombustivel == "gasolina aditivada"){
 			litrosTotal = valorColocado / gAditivada
 			valorPorLitro = gAditivada
 			
-		}se(tipoCombustivel == "disel"){
+		}
+		se(tipoCombustivel == "disel"){
 			litrosTotal = valorColocado / diselS10
 			valorPorLitro = diselS10
 		}
