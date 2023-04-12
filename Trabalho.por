@@ -13,10 +13,6 @@ funcao inicio() {
 		leia(valorColocado)
 		escreva("Informe a forma de pagamento (dinheiro, debito ou credito): ")
 		leia(formaPagamento)
-		escreva("Informe quem o atendeu: ")
-		leia(null)
-		escreva("Informe uma avaliação do frentista de 0 a 5. ")
-		leia(null)
 	
 		se(tipoCombustivel == "etanol"){
 			litrosTotal = (valorColocado / etanol)
