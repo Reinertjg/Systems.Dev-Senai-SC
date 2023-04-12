@@ -2,7 +2,6 @@ funcao inicio() {
 
 		cadeia tipoCombustivel = ""
 		cadeia formaPagamento = ""
-		cadeia null = ""
 		real valorColocado = 0.0,  litrosTotal = 0.0
 		real valorPorLitro = 0.0, valorTotal = 0.0, totalImposto = 0.0
 		real etanol = 3.75, gComum = 5.35, gAditivada = 5.85, diselS10 = 6.69
