@@ -1,47 +1,42 @@
 import javax.swing.JOptionPane;
 
-public class Exercício1 {
+public class JavaApplication1 {
     public static void main(String[] args) throws Exception {
 
         String nomeCargo = "";
         Double salario = 0.0;
-        Double aumentoSalario = 0.0, novoSalario = 0.0;
-        int codigoCargo = 0;
-
+        String  novoSalario = "";
+        String codigoCargo = "";
+        
+        Object[] valores = {"Serviços Gerai","Vigia","Recepcionista","Vendedor"};
+        Object selectedValores = JOptionPane.showInputDialog(null, "Escolha seu cargo", ""
+                + "Cargo", JOptionPane.INFORMATION_MESSAGE,null,valores,valores[2]);
+        
         salario = Double.parseDouble(JOptionPane.showInputDialog("Informe seu Salario!!"));
-        codigoCargo = Integer.parseInt(JOptionPane.showInputDialog("Informe o código do cargo"
-                + "\n(Digite 1 para Serviços Gerai) "
-                + "\n(Digite 2 para Vigia) "
-                + "\n(Digite 3 para Recepcionista) "
-                + "\n(Digite 4 para Vendedor) "));
+        codigoCargo = (String) selectedValores;
 
-        switch (codigoCargo) {
-            case 1 -> {
-            aumentoSalario = salario * 0.50;
-            nomeCargo = "Serviços Gerai";
-            novoSalario = salario + aumentoSalario;
-            }
-            case 2 -> {
-            aumentoSalario = salario * 0.30;
-            nomeCargo = "Vigia";
-            novoSalario = salario + aumentoSalario;
-            }
-            case 3 -> {
-            aumentoSalario = salario * 0.25;
-            nomeCargo = "Recepcionista";
-            novoSalario = salario + aumentoSalario;
-            }
-            case 4 -> {
-            aumentoSalario = salario * 0.15;
-            nomeCargo = "Vendedor";
-            novoSalario = salario + aumentoSalario;
-            }
-            default -> JOptionPane.showMessageDialog(null, "Código do cargo não encontrado");
+        novoSalario = switch (codigoCargo) {
+            case "Serviços Gerai" -> 
+                "Seu cargo é Serviços Gerai"
+                +"\nAumento R$" + (salario * 0.50) + ""
+                +"\nNovo Salario" + (salario + (salario * 0.50));
+            case "Vigia" -> 
+                "Seu cargo é Vigia"
+                +"\nAumento R$" + (salario * 0.30) + ""
+                +"\nNovo Salario" + (salario + (salario * 0.30));
+            case "Recepcionista" -> 
+                "Seu cargo é Recepcionista"
+                +"\nAumento R$" + (salario * 0.25) + ""
+                +"\nNovo Salario" + (salario + (salario * 0.25));
+            case "Vendedor" -> 
+                 "Seu cargo é Recepcionista"
+                +"\nAumento R$" + (salario * 0.15) + ""
+                +"\nNovo Salario" + (salario + (salario * 0.15));
+            default -> 
+                "Código do cargo não encontrado";
         };
         
-        JOptionPane.showMessageDialog(null, "Nome do cargo: "+nomeCargo
-                +"\nValor do acrecentado: "+aumentoSalario
-                +"\nNovo Salario: "+novoSalario);
+        JOptionPane.showMessageDialog(null, novoSalario);
         // Calcular o aumento de salário de acordo com o cargo. Ler salário e o código
         // do cargo.
         // Calcular o aumento salarial de acordo com o cargo da pessoa conforme a tabela
