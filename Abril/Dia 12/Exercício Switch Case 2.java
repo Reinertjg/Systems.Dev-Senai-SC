@@ -16,13 +16,9 @@ public class Exercício2 {
                 "Informe se a horas extras realizadas",
                 null, JOptionPane.YES_NO_OPTION);
         switch (descisao) {
-            case 0 -> {
+            case 0 -> 
                 horasExtras = Double.parseDouble(JOptionPane.showInputDialog("Informe quantas horas extras "
-                        + "foram realizadas no mês"));
-            }
-            case 1 ->{
-
-            }
+                        + "foram realizadas no mês"))
         }
         ganhoMes = (horasTrabalhadas * ganhoHora)* 28;
         ganhoMesExtra = (horasExtras * ganhoHora);
