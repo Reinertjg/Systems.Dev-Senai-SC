@@ -14,7 +14,7 @@ public class NewClass1 {
         valorC = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor C: "));
         
         delta = (Math.pow(valorB, 2)- 4 * (valorA) * (valorC));
-        JOptionPane.showMessageDialog(null, delta);
+        
         if(delta > 0){
             bhaskara1 = ((-valorB) + (Math.sqrt(delta))) / ( 2 * valorA);
             bhaskara2 = ((-valorB) - (Math.sqrt(delta))) / ( 2 * valorA);
