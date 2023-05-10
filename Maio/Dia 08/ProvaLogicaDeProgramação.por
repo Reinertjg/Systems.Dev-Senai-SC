@@ -27,13 +27,11 @@ programa
 		se(caloriasSemanais <= 450){
 			mensagemTipoExercicio = "\n- Musculação: "+caloriasSemanais+" calorias"
 			valorDoPlano = valorMusculacao
-		}	
-		senao se(caloriasSemanais > 450 e caloriasSemanais <= 1850){
+		} senao se(caloriasSemanais <= 1850){
 			mensagemTipoExercicio = "\n- Musculação: 450.0 calorias"
 				+"\n- Corrida: "+(caloriasSemanais-450)+" calorias"
 			valorDoPlano = (valorMusculacao + valorCorrida)
-		}
-		senao{
+		} senao{
 			mensagemTipoExercicio = "\n- Musculação: 450.0 calorias"
 				+"\n- Corrida: 1400.0 calorias"
 				+"\n- Bicicleta Ergonômica: "+(caloriasSemanais-1850)+" calorias"
