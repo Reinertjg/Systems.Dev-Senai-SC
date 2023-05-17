@@ -8,14 +8,13 @@ public class Exercício3 {
         double chico = 1.50;
         double ze = 1.10;
         int anos = 0;
-        int cc = 0;
+       
 
-        do {
+        for(anos=0; ze<chico; anos++)
+        {
             chico += 0.02;
             ze += 0.03;
-
-            anos++;
-        } while (ze <= chico);
+        }
 
         JOptionPane.showMessageDialog(null, "Seram " + anos + " anos para que Zé seja maior que Chico.");
 
