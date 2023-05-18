@@ -9,7 +9,7 @@ public class Exercício8 {
         double maiorNumero = 0.0;
         double numero = 0.0;
 
-        for(int cc=1; cc!=51; cc++)
+        for(int cc=1; cc<51; cc++)
         {
             numero = Double.parseDouble(JOptionPane.showInputDialog("Informe 50 numeros (" + cc + "/50)"));
 
