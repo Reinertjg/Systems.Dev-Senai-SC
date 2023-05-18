@@ -1,29 +1,29 @@
-package atividades;
+package javaapplication1;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 public class Exercício4 {
 
     public static void main(String[] args) {
-
-        int cc = 0;
-        int qntDeNumeros = 0;
-        int numeros = 0;
+        DecimalFormat df = new DecimalFormat();
+        df.applyPattern("##.00");
+        
+        int qntDeNumeros = 0;;
         double media = 0.0, mediaFinal = 0.0;
 
-        do {
+       for(int numeros = 1; numeros>0;) {
             numeros = Integer.parseInt(JOptionPane.showInputDialog("Informe um numero positivo para a media (Numero negativo encerra o calculo)"));
+            
             if (numeros > 0) {
                 media += numeros;
                 qntDeNumeros++;
-            } else {
-                cc++;
             }
 
-        } while (cc != 1);
+        } 
 
         mediaFinal = (media / qntDeNumeros);
-        JOptionPane.showMessageDialog(null, "Media Geral: " + mediaFinal);
+        JOptionPane.showMessageDialog(null, "Media Geral: " + df.format(mediaFinal));
 
     }
 }
