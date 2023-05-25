@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		cadeia resposta = "n"
+		cadeia resposta = "s"
 		inteiro cc = 0
 		inteiro contador = 0
 		real media = 0.0
@@ -29,7 +29,7 @@ programa
 			contador=0
 			media=0.0
 		
-		}enquanto(resposta != "n")
+		}enquanto(resposta != "s" || resposta != "S")
 	}
 }
 /*Ao final o sistema irá realizar a saída com a média do aluno.
