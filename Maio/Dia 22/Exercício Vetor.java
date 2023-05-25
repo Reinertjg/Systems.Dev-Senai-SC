@@ -5,7 +5,7 @@ public class Exercício1 {
 
     public static void main(String[] args) throws Exception {
 
-        String resposta = "n";
+        String resposta = "s";
         int cc = 0;
         int contador = 0;
         double media = 0.0;
@@ -26,7 +26,7 @@ public class Exercício1 {
             contador = 0;
             media = 0.0;
 
-        } while (resposta == "n");
+        } while (resposta != "S" || resposta != "s");
 
     }
 }
