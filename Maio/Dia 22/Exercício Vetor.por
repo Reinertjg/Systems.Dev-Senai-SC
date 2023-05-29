@@ -29,7 +29,7 @@ programa
 			contador=0
 			media=0.0
 		
-		}enquanto(resposta != "s" || resposta != "S")
+		}enquanto(resposta != "s" ou resposta != "S")
 	}
 }
 /*Ao final o sistema irá realizar a saída com a média do aluno.
