@@ -1,48 +1,25 @@
 programa
 {
+	// - variáveis globais
 	inclua biblioteca Tipos --> t
 	const cadeia banco_login = "adm", banco_senha = "adm"
 	cadeia nomeProduto[99]
 	cadeia pular = "\n"
-    	inteiro cc = 0, contador = 0
+    	inteiro contador = 0
     	
     	
 	funcao inicio()
 	{
-		inteiro opcaoMenu = 0
 		logico resultado = falso
 		resultado  = Login()
 		
 		se (resultado){
-			escreva("\nDeu certo")
+			escreva(pular + "Login efetuado com sucesso")
+			Menu()
 		} senao {
-			escreva("\n Deu errado")
+			escreva(pular + "Login/Senha inválidos")
+			Encerrar()
 		}
-		
-		faca{
-		  ImprimirMenu()
-		  leia(opcaoMenu)
-		  escolha (opcaoMenu) {
-	      	caso 1:
-		          Inserir()
-				pare
-      		caso 2:
-		          Atualizar()
-	          	pare
-      		caso 3:
-		          Excluir()
-	          	pare
-	      	caso 4:
-		          Exibir()
-	          	pare
-      		caso 9:
-	          	Encerrar()
-          		pare
-	      	caso contrario:
-		          escreva("Opção inválida. Digite novamente.")
-	          	pare
-		  }
-		} enquanto (opcaoMenu != 9)
 	}
 	
 	funcao logico Login(){
@@ -53,7 +30,7 @@ programa
 		escreva("Informe o login: ")
 		leia(login)
 		
-		escreva("\n")
+		escreva(pular)
 
 		escreva("Informe a senha: ")
 		leia(senha)
@@ -64,16 +41,49 @@ programa
 
 		retorne resultado
 	}
+
+	funcao Menu(){
+		inteiro opcaoMenu = 0
+		faca{
+			ImprimirMenu()
+			leia(opcaoMenu)
+				escolha (opcaoMenu) {
+					caso 1:
+				          Inserir()
+						pare
+		      		caso 2:
+				          Atualizar()
+			          	pare
+		      		caso 3:
+				          Excluir()
+			          	pare
+			      	caso 4:
+				          Exibir("")
+			          	pare
+					caso 5:
+			          	ExibirProdutoporOrdem()
+			          	pare
+		      		caso 9:
+			          	Encerrar()
+		          		pare
+			      	caso contrario:
+				          escreva("Opção inválida. Digite novamente.")
+			          	pare
+				}
+			} enquanto (opcaoMenu != 9)
+	}
 	
 	funcao ImprimirMenu(){
-
-		inteiro opcaoMenu = 0
 		
 		escreva(+ pular + pular + "-----MENU-----"
-		          + pular + "1 - inserir"
-		          + pular + "2 - Atualizar"
-		          + pular + "3 - Excluir"
-		          + pular + "4 - Exibir"
+		          + pular + "1 - inserir produto"
+		          + pular + "2 - Atualizar produto"
+		          + pular + "3 - Excluir produto"
+		          + pular + "4 - Exibir todos os produtos"
+		          + pular + "5 - Exibir Produto por Ordem"
+		          + pular + "6 - Exibir Produto por Classificação"
+		          + pular + "7 - Adicionar Estoque"
+		          + pular + "8 - Remover Estoque"
 		          + pular + "9 - Encerrar" + pular)
 	}
 	
@@ -116,18 +126,39 @@ programa
       	nomeProduto[indice] = ""
         }
 	
-	funcao Exibir(){
-	 	escreva("-----------------"
-		 	+pular+"Dados Inseridos:")
-		 	
-		para(inteiro ii = 0;  ii < contador; ii++ ){
-		    escreva(pular+nomeProduto[ii])
+	funcao Exibir(cadeia ordem){
+
+	 	se (ordem == "D"){
+			para (inteiro i = contador; i >= 0; i--){
+				se (nomeProduto[i] != ""){
+					escreva("Produto (" + i +"): " + nomeProduto[i] + pular)
+				}
+			}
+		} senao {
+			para (inteiro i = 0; i < contador; i++){
+				se (nomeProduto[i] != ""){
+					escreva("Produto (" + i +"): " + nomeProduto[i] + pular)
+				}
+			}
 		}
-		escreva(pular+"-----------------"+pular)
-	}
-	
-	funcao Encerrar(){
-		escreva("PROGRAMA ENCERRADO"+pular)
 	}
 
+	funcao ExibirProdutoporOrdem(){
+
+		cadeia ordem = "" 
+		//- C = crescente
+		//- D = decrecente
+
+		escreva(pular + "Informa a ordem (D) Decrecente ou (C) Crescente: ")
+		leia(ordem)
+
+		Exibir(ordem)
+		
 	}
+
+	
+	funcao Encerrar(){
+		escreva(pular + "PROGRAMA ENCERRADO" + pular)
+	}
+
+}
