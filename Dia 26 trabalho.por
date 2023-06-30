@@ -3,7 +3,9 @@ programa
 	// - variáveis globais
 	inclua biblioteca Tipos --> t
 	const cadeia banco_login = "adm", banco_senha = "adm"
-	cadeia nomeProduto[99]
+	cadeia nomeProduto[999]
+	cadeia classificacaoProduto[999]
+	real estoqueProduto[999]
 	cadeia pular = "\n"
     	inteiro contador = 0
     	
@@ -49,7 +51,7 @@ programa
 			leia(opcaoMenu)
 				escolha (opcaoMenu) {
 					caso 1:
-				          Inserir()
+			          	Inserir()
 						pare
 		      		caso 2:
 				          Atualizar()
@@ -61,8 +63,11 @@ programa
 				          Exibir("")
 			          	pare
 					caso 5:
-			          	ExibirProdutoporOrdem()
+			          	ExibirProdutoPorOrdem()
 			          	pare
+		          	caso 7:
+		          		AdicionarEstoque()
+		          		pare
 		      		caso 9:
 			          	Encerrar()
 		          		pare
@@ -75,29 +80,38 @@ programa
 	
 	funcao ImprimirMenu(){
 		
-		escreva(+ pular + pular + "-----MENU-----"
-		          + pular + "1 - inserir produto"
-		          + pular + "2 - Atualizar produto"
-		          + pular + "3 - Excluir produto"
-		          + pular + "4 - Exibir todos os produtos"
-		          + pular + "5 - Exibir Produto por Ordem"
-		          + pular + "6 - Exibir Produto por Classificação"
-		          + pular + "7 - Adicionar Estoque"
-		          + pular + "8 - Remover Estoque"
-		          + pular + "9 - Encerrar" + pular)
+		escreva( pular + "***** MENU ******"			 + pular
+		          + "1 - Inserir produto"				 + pular
+		          + "2 - Atualizar produto"			 + pular
+		          + "3 - Excluir produto"				 + pular
+		          + "4 - Exibir todos os produtos"		 + pular
+		          + "5 - Exibir Produto por Ordem"		 + pular
+		          + "6 - Exibir Produto por Classificação" + pular
+		          + "7 - Adicionar Estoque"			 + pular
+		          + "8 - Remover Estoque"				 + pular
+		          + "9 - Encerrar"					 + pular)
 	}
 	
 	funcao Inserir(){
 		faca {
-			escreva(pular+"Nome do produto:")
+			escreva( pular + "Nome do produto:")
 	    		leia(nomeProduto[contador])
 	    		se(nomeProduto[contador] == ""){
 				escreva("Nenhum dado foi inserido."+pular)
 			} senao{
-		       		escreva("Dado foi inserido com sucesso."+pular)
+	       		escreva("Dado foi inserido com sucesso."+pular)
             	}
-          
         	}enquanto (nomeProduto[contador] == "")
+
+        	faca {
+        		escreva( pular + "Informe a Classificação ( A, B ou C) :")
+			leia(classificacaoProduto[contador])
+			se(classificacaoProduto[contador] == ""){
+				escreva("Nenhum dado foi inserido."+pular)
+			} senao{
+	       		escreva("Dado foi inserido com sucesso."+pular)
+            	}
+        	}enquanto (classificacaoProduto[contador] == "")
 		contador++
 	}
 	
@@ -105,13 +119,21 @@ programa
 		inteiro atualizacaoIndice = 0
         	escreva("Informe o numero do vetor que deseja atualizar!" + pular)
         	leia(atualizacaoIndice)
-
+		
         	se (nomeProduto[atualizacaoIndice] == "") {
             	escreva("Esse produto não existe!" + pular)
-  	 	}senao{
-            	escreva("Informe o novo nome do produto!" + pular)
-           	leia(nomeProduto[atualizacaoIndice])
-        }
+  	 	}senao{	
+  	 		faca {
+  	 			escreva(pular + "Informe o novo nome do produto!")
+           		leia(nomeProduto[atualizacaoIndice])
+
+           		se(nomeProduto[atualizacaoIndice] == ""){
+					escreva("Dado invalido."+pular)
+				} senao{
+	       			escreva("Dado foi inserido com sucesso."+pular)
+            		}
+  	 		}enquanto (nomeProduto[atualizacaoIndice] == "")	
+   		}
 		
 	}
 	
@@ -143,7 +165,7 @@ programa
 		}
 	}
 
-	funcao ExibirProdutoporOrdem(){
+	funcao ExibirProdutoPorOrdem(){
 
 		cadeia ordem = "" 
 		//- C = crescente
@@ -155,7 +177,32 @@ programa
 		Exibir(ordem)
 		
 	}
+	
+	funcao AdicionarEstoque(){
 
+		inteiro indiceEstoque = 0
+		real soma = 0.0
+
+		escreva("Informe o indice do Produto: ")
+		leia(indiceEstoque)
+		
+		se (nomeProduto[indiceEstoque] == "") {
+            	escreva("Indice Inváido!" + pular)
+  	 	}senao{	
+  	 		faca {
+  	 			escreva(pular + "Informe a quanidade a ser adicionada!")
+           		leia(soma)
+
+           		se(estoqueProduto[indiceEstoque] < 0){
+					escreva("Dado invalido."+pular)
+				} senao{
+	       			escreva("Dado foi inserido com sucesso."+pular)
+	       			estoqueProduto[indiceEstoque] += soma
+            		}
+  	 		}enquanto (estoqueProduto[indiceEstoque] < 0)	
+   		}
+		
+	}
 	
 	funcao Encerrar(){
 		escreva(pular + "PROGRAMA ENCERRADO" + pular)
