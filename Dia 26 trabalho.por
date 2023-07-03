@@ -13,7 +13,7 @@ programa
 	funcao inicio()
 	{
 		logico resultado = falso
-		resultado  = Login()
+		resultado = Login()
 		
 		se (resultado){
 			escreva(pular + "Login efetuado com sucesso")
@@ -68,6 +68,9 @@ programa
 		          	caso 7:
 		          		AdicionarEstoque()
 		          		pare
+	          		caso 8:
+		          		RemoverEstoque()
+		          		pare
 		      		caso 9:
 			          	Encerrar()
 		          		pare
@@ -93,6 +96,7 @@ programa
 	}
 	
 	funcao Inserir(){
+		
 		faca {
 			escreva( pular + "Nome do produto:")
 	    		leia(nomeProduto[contador])
@@ -116,6 +120,7 @@ programa
 	}
 	
 	funcao Atualizar(){
+		
 		inteiro atualizacaoIndice = 0
         	escreva("Informe o numero do vetor que deseja atualizar!" + pular)
         	leia(atualizacaoIndice)
@@ -138,6 +143,7 @@ programa
 	}
 	
 	funcao Excluir(){
+		
 		inteiro indice = 0
         	faca{
         		escreva("Informe o numero do produto que deseja excluir!" + pular)
@@ -146,6 +152,8 @@ programa
         	
   		escreva("Produto excluido com sucesso!" + pular)
       	nomeProduto[indice] = ""
+      	classificacaoProduto[indice] = ""
+      	estoqueProduto[indice] = 0.0
         }
 	
 	funcao Exibir(cadeia ordem){
@@ -198,6 +206,32 @@ programa
 				} senao{
 	       			escreva("Dado foi inserido com sucesso."+pular)
 	       			estoqueProduto[indiceEstoque] += soma
+            		}
+  	 		} enquanto (estoqueProduto[indiceEstoque] < 0)	
+   		}
+		
+	}
+
+	funcao RemoverEstoque(){
+
+		inteiro indiceEstoque = 0
+		real soma = 0.0
+
+		escreva("Informe o indice do Produto: ")
+		leia(indiceEstoque)
+		
+		se (nomeProduto[indiceEstoque] == "") {
+            	escreva("Indice Inváido!" + pular)
+  	 	}senao{	
+  	 		faca {
+  	 			escreva(pular + "Informe a quanidade a ser adicionada!")
+           		leia(soma)
+
+           		se(estoqueProduto[indiceEstoque] < 0){
+					escreva("Dado invalido."+pular)
+				} senao{
+	       			escreva("Dado foi inserido com sucesso."+pular)
+	       			estoqueProduto[indiceEstoque] -= soma
             		}
   	 		}enquanto (estoqueProduto[indiceEstoque] < 0)	
    		}
