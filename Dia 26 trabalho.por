@@ -195,10 +195,10 @@ programa
 		leia(indiceEstoque)
 		
 		se (nomeProduto[indiceEstoque] == "") {
-            	escreva("Indice Inváido!" + pular)
+            	escreva("Indice Inválido!" + pular)
   	 	}senao{	
   	 		faca {
-  	 			escreva(pular + "Informe a quanidade a ser adicionada!")
+  	 			escreva(pular + "Informe a quantidade a ser adicionada!")
            		leia(soma)
 
            		se(estoqueProduto[indiceEstoque] < 0){
@@ -221,10 +221,10 @@ programa
 		leia(indiceEstoque)
 		
 		se (nomeProduto[indiceEstoque] == "") {
-            	escreva("Indice Inváido!" + pular)
+            	escreva("Indice Inválido!" + pular)
   	 	}senao{	
   	 		faca {
-  	 			escreva(pular + "Informe a quanidade a ser adicionada!")
+  	 			escreva(pular + "Informe a quantidade a ser adicionada!")
            		leia(soma)
 
            		se(estoqueProduto[indiceEstoque] < 0){
