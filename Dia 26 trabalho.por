@@ -1,7 +1,7 @@
 programa
 {
 	// - variáveis globais
-	inclua biblioteca Tipos --> t
+	inclua biblioteca Texto --> tx
 	const cadeia banco_login = "adm", banco_senha = "adm"
 	cadeia nomeProduto[999]
 	cadeia classificacaoProduto[999]
@@ -65,6 +65,9 @@ programa
 					caso 5:
 			          	ExibirProdutoPorOrdem()
 			          	pare
+					caso 6:
+			          	ExibirProdutoPorClassificacao()
+			          	pare
 		          	caso 7:
 		          		AdicionarEstoque()
 		          		pare
@@ -110,6 +113,7 @@ programa
         	faca {
         		escreva( pular + "Informe a Classificação ( A, B ou C) :")
 			leia(classificacaoProduto[contador])
+			classificacaoProduto[contador] = tx.caixa_alta(classificacaoProduto[contador])
 			se(classificacaoProduto[contador] == ""){
 				escreva("Nenhum dado foi inserido."+pular)
 			} senao{
@@ -145,15 +149,18 @@ programa
 	funcao Excluir(){
 		
 		inteiro indice = 0
-        	faca{
-        		escreva("Informe o numero do produto que deseja excluir!" + pular)
-        		leia(indice)
-        	} enquanto(indice >= contador)
+		escreva("Informe o numero do produto que deseja excluir!" + pular)
+		leia(indice)
+        	se(indice <= contador){
+        		escreva("Produto excluido com sucesso!" + pular)
+	      	nomeProduto[indice] = ""
+	      	classificacaoProduto[indice] = ""
+	      	estoqueProduto[indice] = 0.0
+        	} senao {
+        		escreva("Indíce inválido!")
+        	}
         	
-  		escreva("Produto excluido com sucesso!" + pular)
-      	nomeProduto[indice] = ""
-      	classificacaoProduto[indice] = ""
-      	estoqueProduto[indice] = 0.0
+  		
         }
 	
 	funcao Exibir(cadeia ordem){
@@ -183,6 +190,22 @@ programa
 		leia(ordem)
 
 		Exibir(ordem)
+		
+	}
+
+	funcao ExibirProdutoPorClassificacao(){
+
+		cadeia posicaoClassificacao
+		
+		escreva("Informe a classificação para usar como filtro:" + pular)
+		leia(posicaoClassificacao)
+		posicaoClassificacao = tx.caixa_alta(posicaoClassificacao)
+		
+		para (inteiro i = 0; i < contador; i++){
+				se (classificacaoProduto[i] == posicaoClassificacao){
+					escreva("Produto (" + i +"): " + nomeProduto[i] + pular)
+				}
+		}
 		
 	}
 	
