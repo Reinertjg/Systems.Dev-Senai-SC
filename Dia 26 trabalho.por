@@ -228,7 +228,7 @@ programa
 			}
 		} senao {
 			para (inteiro i = 0; i < contador; i++){
-				se (nomeProduto[i] != ""){
+				se (estoqueProduto[i] != 0){
 					escreva("Produto (" + i +"): " + nomeProduto[i] + " Estoque: " + estoqueProduto[i] + pular)
 				}
 			}
