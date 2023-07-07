@@ -68,7 +68,7 @@ programa
 					caso 6:
 			          	ExibirProdutoPorClassificacao()
 			          	pare
-		          	caso 7:
+	          		caso 7:
 		          		AdicionarEstoque()
 		          		pare
 	          		caso 8:
@@ -76,6 +76,9 @@ programa
 		          		pare
 		      		caso 9:
 			          	Encerrar()
+		          		pare
+	          		caso 0:
+		          		ExibirProdutoPorEstoque()
 		          		pare
 			      	caso contrario:
 				          escreva("Opção inválida. Digite novamente.")
@@ -95,7 +98,8 @@ programa
 		          + "6 - Exibir Produto por Classificação" + pular
 		          + "7 - Adicionar Estoque"			 + pular
 		          + "8 - Remover Estoque"				 + pular
-		          + "9 - Encerrar"					 + pular)
+		          + "9 - Encerrar"					 + pular
+		          + "0 - Exibir Produto por Estoque" + pular)
 	}
 	
 	funcao Inserir(){
@@ -207,6 +211,28 @@ programa
 				}
 		}
 		
+	}
+
+	funcao ExibirProdutoPorEstoque(){
+
+		cadeia ordem = ""
+		
+		escreva(pular + "Informa a ordem (D) Decrecente ou (C) Crescente: ")
+		leia(ordem)
+		
+		se (ordem == "D"){
+			para (inteiro i = contador; i >= 0; i--){
+				se (estoqueProduto[i] != 0){
+					escreva("Produto (" + i +"): " + nomeProduto[i] + " Estoque: " + estoqueProduto[i] + pular)
+				}
+			}
+		} senao {
+			para (inteiro i = 0; i < contador; i++){
+				se (nomeProduto[i] != ""){
+					escreva("Produto (" + i +"): " + nomeProduto[i] + " Estoque: " + estoqueProduto[i] + pular)
+				}
+			}
+		}
 	}
 	
 	funcao AdicionarEstoque(){
