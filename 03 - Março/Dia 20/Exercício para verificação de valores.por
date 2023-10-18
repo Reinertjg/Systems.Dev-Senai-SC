@@ -78,6 +78,8 @@ programa
 		escreva(textoimpressovalor)
 		escreva("Viagem de maior distancia: ")
 		escreva(textoimpressodistancia)
+
+		
 //Crie um programa em Portugol para realizar a entrada de informações de viagens por aplicativo.
 //O programa deverá solicitar para cada viagem quatro informações:
 //- Origem de: (exe: Rua São Paulo)
