@@ -13,6 +13,7 @@ public class JavaApplication1 {
         float distancia1 = 0.0f, distancia2 = 0.0f, distancia3 = 0.0f;
         float valor1 = 0.0f, valor2 = 0.0f, valor3 = 0.0f;
         float menorvalor = 0.0f, viagemmenor = 0.0f, maiordistancia = 0.0f, viagemmaior = 0.0f;
+
         System.out.println("Primeira Viagem");
         System.out.println("Origem de: ");
         origem1 = sv.next();
