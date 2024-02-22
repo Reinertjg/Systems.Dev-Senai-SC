@@ -1,4 +1,3 @@
-# Faculdade
-Faculdade
-https://www.dell.com/pt-br/shop/laptops/inspiron-15-3000-intel/spd/inspiron-15-3511-laptop/i3511u304w
-https://www.dell.com/pt-br/shop/notebooks/notebook-inspiron-15-5000/spd/inspiron-15-5510-laptop/i5510u4505w
+O Desenvolvimento de Sistemas é uma disciplina da computação que se concentra na criação de sistemas de software para atender às necessidades específicas de uma organização ou usuário. Envolve várias etapas, desde a concepção inicial até a implementação e manutenção do sistema.
+
+A primeira etapa no desenvolvimento de sistemas é a análise de requisitos, onde os desenvolvedores trabalham em estreita colaboração com os usuários finais e as partes interessadas para entender suas necessidades e objetivos. Isso pode envolver a realização de entrevistas, a observação de processos de negócios ou a análise de documentos existentes.
