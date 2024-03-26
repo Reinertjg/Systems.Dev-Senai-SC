@@ -1,0 +1,62 @@
+// Define os pinos para os LEDs e o botão
+const int ledVerdePin = 6;
+const int ledAmareloPin = 7;
+const int ledVermelhoPin = 8;
+const int botaoPin = 1;
+
+// Define variáveis para armazenar o estado dos LEDs e do botão
+int estadoVerde = LOW;
+int estadoVermelho = LOW;
+int estadoAmarelo = LOW;
+int estadoBotaoAnterior = HIGH;
+int estadoBotaoAtual = HIGH;
+
+void setup() {
+  // Define os pinos como saídas ou entradas
+  pinMode(ledVerdePin, OUTPUT);
+  pinMode(ledVermelhoPin, OUTPUT);
+  pinMode(ledAmareloPin, OUTPUT);
+  pinMode(botaoPin, INPUT_PULLUP);
+  Serial.begin(9600);
+
+  // Desliga todos os LEDs no início
+  digitalWrite(ledVerdePin, LOW);
+  digitalWrite(ledVermelhoPin, LOW);
+  digitalWrite(ledAmareloPin, LOW);
+}
+
+void loop() {
+  // Lê o estado atual do botão
+  estadoBotaoAtual = digitalRead(botaoPin);
+
+  // Verifica se o botão foi pressionado (estado mudou de HIGH para LOW)
+  if (estadoBotaoAtual == LOW && estadoBotaoAnterior == HIGH) {
+    // Atualiza o estado dos LEDs
+    if (estadoVerde == LOW && estadoVermelho == LOW && estadoAmarelo == LOW) {
+      estadoVerde = HIGH;
+      
+    } else if (estadoVerde == HIGH) {
+      estadoVerde = LOW;
+      estadoVermelho = HIGH;
+      Serial.println("vermelho");
+    } else if (estadoVermelho == HIGH) {
+      estadoVermelho = LOW;
+      estadoAmarelo = HIGH;
+      Serial.println("amarelo");
+    } else if (estadoAmarelo == HIGH) {
+      estadoAmarelo = LOW;
+      estadoVerde = HIGH;
+      Serial.println("verde");
+    }
+
+    // Atualiza os LEDs de acordo com os estados
+    digitalWrite(ledVerdePin, estadoVerde);
+    digitalWrite(ledVermelhoPin, estadoVermelho);
+    digitalWrite(ledAmareloPin, estadoAmarelo);
+  }
+
+  // Atualiza o estado anterior do botão para o próximo ciclo
+  estadoBotaoAnterior = estadoBotaoAtual;
+
+  delay(50);
+}
