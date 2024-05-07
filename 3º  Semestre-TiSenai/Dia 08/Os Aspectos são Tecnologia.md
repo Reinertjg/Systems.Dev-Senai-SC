@@ -1,6 +1,6 @@
 1. Quais são os três aspectos essenciais a considerar durante a implantação de um sistema em
 uma organização?
----------------------------------------------------------------------------------------------------
+____________
 R:Os aspectos são Tecnologia, Processo e Pessoas
 
 
