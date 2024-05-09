@@ -1,6 +1,6 @@
 Os bancos de dados armazenam uma variedade de tipos de dados para atender às necessidades de diferentes tipos de informações e aplicativos. A escolha dos tipos de dados a serem usados em um banco de dados depende da natureza dos dados que serão armazenados e processados. Aqui estão alguns dos tipos de dados mais comuns em um banco de dados:
 
-**1 - Texto (String):**
+**1 - Texto (String):**    
 CHAR: Armazena strings de tamanho fixo. Usado quando os valores têm um comprimento constante.
 VARCHAR: Armazena strings de tamanho variável. Apropriado para valores com comprimentos variáveis.
 TEXTO (TEXT): Armazena strings muito longas, como documentos ou descrições.
