@@ -2,6 +2,9 @@ __Cláusula WHERE:__ A maioria dos filtros é especificada na cláusula WHERE de
 Por exemplo, a consulta a seguir retorna todos os clientes com idade superior a 30 anos:   
     ```SELECT * FROM Clientes WHERE Idade > 30; `
 
+__Operadores de Comparação:__ Para criar filtros, você usa operadores de comparação,
+como >, <, =, != (diferente de), >=, <=, etc. Esses operadores comparam valores em colunas de tabelas com valores específicos.
+
 
 __Operadores Lógicos:__ Você pode combinar várias condições usando operadores lógicos, como AND, OR e NOT.
 Isso permite criar filtros complexos. Por exemplo, recuperar clientes com idade superior a 30 e que não sejam do sexo masculino:    
