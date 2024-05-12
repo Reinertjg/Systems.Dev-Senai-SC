@@ -5,16 +5,22 @@ CREATE TABLE tabelaclientes (
 	);
 /*Cria uma tabela*/
 
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
 DROP tipo_do_objeto nome_do_objeto;
 DROP TABLE tabelaclientes;
 DROP DATABASE Colegio_São_Paulo;
 DROP SCHEMA Turno_da_manhã;
 /*Exclui uma tabela*/
 
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
 ALTER TABLE nome_da_tabela Add nome_da_coluna tipo_de_dado;
 ALTER TABLE tabelaclientes Add Endereço_Cliente VARCHAR(255);
 ALTER TABLE estudantes Add idade INT;
 /*Adiciona uma coluna "Endereço_Cliente", Tipo de dado: VARCHAR, na tabela "tabelaclientes"*/
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
 
 CREATE TABLE tabelaprodutos (
   ID_Produto INT PRIMARY KEY,
@@ -29,6 +35,8 @@ CREATE TABLE tabelaprodutos (
   FOREIGN KEY (Fornecedor) REFERENCES tabelafornecedores (id) /*Chaves Estrangeiras*/
   );
 
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
 CREATE TABLE tabelapedidos (
   ID_pedido INT PRIMARY KEY,
   Data_Do_Pedido DATE,
@@ -38,6 +46,8 @@ CREATE TABLE tabelapedidos (
   Data_De_Envio_Estimada DATE,
   FOREIGN KEY (cliente) REFERENCES tabelaclientes(id_cliente)
  );
+
+ /*-----------------------------------------------------------------------------------------------------------------------*/
  
  CREATE TABLE tabelapedidosgold (
  ID_pedido_gold INT PRIMARY KEY,

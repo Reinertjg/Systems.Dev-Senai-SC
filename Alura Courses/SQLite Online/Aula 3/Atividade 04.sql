@@ -32,6 +32,8 @@ insert into tabelaclientes (
     (30, 'Larissa Pereira', 'larissa.pereira@email.com', 'Rua dos Bosques, 123');
  /* Insere todos esses dados na tablea (tabelaclientes) */
 
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
  insert into tabelaprodutos (
    id_produto,
    nome_do_produto,
