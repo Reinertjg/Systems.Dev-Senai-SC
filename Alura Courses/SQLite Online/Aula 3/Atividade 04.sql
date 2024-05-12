@@ -1,3 +1,10 @@
+/*
+Então agora é com você!
+Insira os dados tanto na tabela de clientes quanto na tabela de produtos utilizando o comando INSERT que já aprendemos e executamos juntos em aula.
+Aqui está o link com os dados dos outros clientes que devem ser adicionados na tabela de clientes.
+E aqui está o link com as informações dos produtos a serem adicionados na tabela de produtos.
+*/
+
 insert into tabelaclientes (
     id_cliente,
     nome_cliente,
