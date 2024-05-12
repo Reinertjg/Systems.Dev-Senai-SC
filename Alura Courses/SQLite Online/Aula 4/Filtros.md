@@ -1,6 +1,6 @@
 __Cláusula WHERE:__ A maioria dos filtros é especificada na cláusula WHERE de uma consulta SELECT. 
 Por exemplo, a consulta a seguir retorna todos os clientes com idade superior a 30 anos:   
-    ```SELECT * FROM Clientes WHERE Idade > 30; ```
+    ```SELECT * FROM Clientes WHERE Idade > 30; `
 
 
 __Operadores Lógicos:__ Você pode combinar várias condições usando operadores lógicos, como AND, OR e NOT.
