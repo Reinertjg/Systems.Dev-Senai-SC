@@ -25,5 +25,7 @@ SELECT * FROM tabelaprodutos WHERE preco_de_compra BETWEEN 200 AND 600 ORDER BY 
 SELECT * FROM tabelaprodutos WHERE preco_de_compra BETWEEN 200 AND 600 ORDER BY fornecedor DESC;
 /* DESC = Decrescente*/
 
+SELECT informacoes_de_contato AS email_cliente FROM clientes;
+/*  Quando quiser criar um apilido de alguma coluna na consulta */
 
 
