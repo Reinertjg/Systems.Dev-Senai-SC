@@ -14,7 +14,7 @@ SELECT * FROM tabelapedidos WHERE status = 'Pendente' OR status = 'Processando';
 SELECT * FROM tabelapedidos WHERE NOT status = 'Pendente';
 
 SELECT * FROM tabelapedidos WHERE data_de_envio_estimada BETWEEN '2023-08-01' AND '2023-09-01';
-select * from tabelaprodutos WHERE preco_de_compra BETWEEN 200 and 600;
+SELECT * FROM tabelaprodutos WHERE preco_de_compra BETWEEN 200 and 600;
 /* BETWEEN = entre algo  */
 
 
