@@ -1,3 +1,4 @@
+/* 1 */
 CREATE TABLE funcionarios (
     id INT PRIMARY KEY,
     nome VARCHAR(250),
@@ -5,11 +6,7 @@ CREATE TABLE funcionarios (
     salario FLOAT
 );
 
-
-INSERT INTO funcionarios (
-    id, nome, departamento, salario
-)
-VALUES 
+INSERT INTO funcionarios ( id, nome, departamento, salario) VALUES 
 (1, 'Heitor Vieira', 'Financeiro', 4959.22),
 (2, 'Daniel Campos', 'Vendas', 3884.44),
 (3, 'Luiza Dias', 'TI', 8205.78),
@@ -21,19 +18,28 @@ VALUES
 (9, 'Brenda Cardoso', 'TI', 8853.34),
 (10, 'Danilo Souza', 'TI', 8242.14);
 
+/* 2 */ 
+SELECT * FROM funcionarios;
 
+/* 3 */
 SELECT * FROM funcionarios WHERE departamento = 'Vendas';
 
+/* 4 */
 SELECT * FROM funcionarios WHERE salario > 5000;
 
-????
+/* 5 */
+SELECT DISTINCT departamento FROM funcionarios;
 
+/* 6 */
 UPDATE funcionarios SET salario = 7500.00 WHERE departamento = 'TI';
 
+/* 7 */
 DELETE FROM funcionarios WHERE salario < 4000;
 
+/* 8 */
 SELECT * FROM funcionarios WHERE departamento = 'Vendas' AND salario >= 6000;
 
+/* 9 */
 CREATE TABLE projetos (
     id_projeto INT PRIMARY KEY,
     nome_projeto VARCHAR(100),
@@ -41,7 +47,11 @@ CREATE TABLE projetos (
     FOREIGN KEY (id_gerente) REFERENCES funcionarios (id)
 );
 
+/* 10 */
 DROP TABLE funcionarios;
+
+
+
 
 /*
 Chegou a hora de se desafiar a desenvolver ainda mais todo o conhecimento aprendido durante nossa jornada!
