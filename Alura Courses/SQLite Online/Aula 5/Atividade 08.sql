@@ -1,3 +1,41 @@
+CREATE TABLE tabelaAlunos (
+    id_aluno INT PRIMARY KEY,
+    data_nascimento_aluno DATE,
+    genero_aluno VARCHAR(250),
+    endereco_aluno VARCHAR(250),
+    telefone_contato_aluno INT,
+    email_aluno VARCHAR(250)
+);
+
+CREATE TABLE tabelaProfessores (
+    id_professor INT PRIMARY KEY,
+    nome_professor VARCHAR(250),
+    data_nascimento_professor DATE,
+    genero_professor VARCHAR(100),
+    telefone_contato_professor INT,
+    email_professor VARCHAR(250)
+);
+
+CREATE TABLE tabelaDisciplinas (
+    id_disciplina INT PRIMARY KEY,
+    nome_professor VARCHAR(250),
+    discricao_disciplina VARCHAR(250),
+    carga_horario_disciplina INT,
+    professor_disciplinas INT,
+    FOREIGN KEY (professor_disciplinas) REFERENCES tabelaProfessores (id_professor)
+);
+
+CREATE TABLE tabelaTurmas (
+    nome_da_turma VARCHAR(250),
+    ano_letivo_turma INT,
+    professor_turma INT,
+    FOREIGN KEY (professor_turma) REFERENCES tabelaProfessores (id_professor)
+);
+
+CREATE TABLE tabelaTurmaDisciplinas (
+    
+)
+
 /*
 
 O primeiro passo é definir a estrutura do banco de dados, criando tabelas para armazenar informações específicas. Utilizaremos SQL (Structured Query Language) para criar as tabelas. Aqui estão os dados que você pode utilizar:
