@@ -1,40 +1,54 @@
 CREATE TABLE tabelaAlunos (
     id_aluno INT PRIMARY KEY,
-    data_nascimento_aluno DATE,
-    genero_aluno VARCHAR(250),
-    endereco_aluno VARCHAR(250),
-    telefone_contato_aluno INT,
-    email_aluno VARCHAR(250)
+    nome_aluno VARCHAR(250),
+    data_nascimento DATE,
+    genero VARCHAR(250),
+    endereco VARCHAR(250),
+    telefone_contato INT,
+    email VARCHAR(250)
 );
 
 CREATE TABLE tabelaProfessores (
-    id_professor INT PRIMARY KEY,
-    nome_professor VARCHAR(250),
-    data_nascimento_professor DATE,
-    genero_professor VARCHAR(100),
-    telefone_contato_professor INT,
-    email_professor VARCHAR(250)
+    ID_Professor INT PRIMARY KEY,
+    Nome_Professor VARCHAR(250),
+    Data_Nascimento DATE,
+    Genero VARCHAR(100),
+    Telefone_Contato INT,
+    email VARCHAR(250)
 );
 
 CREATE TABLE tabelaDisciplinas (
     id_disciplina INT PRIMARY KEY,
-    nome_professor VARCHAR(250),
-    discricao_disciplina VARCHAR(250),
-    carga_horario_disciplina INT,
-    professor_disciplinas INT,
+    nome_disciplina VARCHAR(250),
+    discricao VARCHAR(250),
+    carga_horario INT,
+    ID_Professor INT,
     FOREIGN KEY (professor_disciplinas) REFERENCES tabelaProfessores (id_professor)
 );
 
 CREATE TABLE tabelaTurmas (
-    nome_da_turma VARCHAR(250),
-    ano_letivo_turma INT,
+    id_turma INT PRIMARY KEY,
+    nome VARCHAR(250),
+    ano_letivo INT,
     professor_turma INT,
     FOREIGN KEY (professor_turma) REFERENCES tabelaProfessores (id_professor)
 );
 
 CREATE TABLE tabelaTurmaDisciplinas (
-    
-)
+    id_turma INT,
+    id_disciplina INT,
+    FOREIGN KEY (id_turma) REFERENCES tabelaTurmas (id_turma)
+    FOREIGN KEY (id_disciplina) REFERENCES tabelaDisciplinas (id_disciplina)
+);
+
+CREATE TABLE tabelaNotas (
+    id_nota INT PRIMARY KEY,
+    id_aluno INT,
+    disciplina_nota INT,
+    nota INT,
+    data_da_avaliacao DATE
+);
+
 
 /*
 
