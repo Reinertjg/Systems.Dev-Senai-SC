@@ -1,5 +1,6 @@
 
 /* Utilizando o LIKE */
+/* Para realizar perquisa com uma parte da caracter */
 SELECT * FROM Treinamento
 WHERE curso LIKE '%realizar%';
 
