@@ -21,5 +21,10 @@ WHERE tipolicenca = 'férias'; /* Conta todas as linhas da coluna tipolicenca, o
 SELECT parentesco FROM Dependentes
 GROUP BY parentesco; /* Busca apenas os grupos da coluna */
 
-SELECT parentesco COUNT(*) FROM Dependentes
+SELECT parentesco, COUNT(*) FROM Dependentes
 GROUP BY parentesco; /* Busca apenas os grupos da coluna, junto a quantidade de cada grupo */
+
+SELECT INSTITUICAO, COUNT(curso)
+FROM Treinamento
+GROUP BY instituicao
+HAVING COUNT(curso) 
