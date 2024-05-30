@@ -24,6 +24,7 @@ GROUP BY parentesco; /* Busca apenas os grupos da coluna */
 SELECT parentesco, COUNT(*) FROM Dependentes
 GROUP BY parentesco; /* Busca apenas os grupos da coluna, junto a quantidade de cada grupo */
 
+/* Cláusula - HAVING */
 SELECT INSTITUICAO, COUNT(curso)
 FROM Treinamento
 GROUP BY instituicao
