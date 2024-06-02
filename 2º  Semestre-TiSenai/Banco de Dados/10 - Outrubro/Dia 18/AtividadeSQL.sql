@@ -133,8 +133,8 @@ select * from turmas;
 INSERT INTO Notas (IDAluno, IDDisciplina, Nota)
 VALUES 	(1, 1, 8.5),  -- Nota do Aluno 1 na Disciplina 1
        	(2, 1, 7.8),  -- Nota do Aluno 2 na Disciplina 1
-	(3, 2, 8.0),  -- Nota do Aluno 3 na Disciplina 2
-	(4, 1, 7.5),  -- Nota do Aluno 4 na Disciplina 1
+	      (3, 2, 8.0),  -- Nota do Aluno 3 na Disciplina 2
+	      (4, 1, 7.5),  -- Nota do Aluno 4 na Disciplina 1
        	(4, 2, 8.8),  -- Nota do Aluno 4 na Disciplina 2
        	(5, 1, 9.3),  -- Nota do Aluno 5 na Disciplina 1
        	(5, 2, 7.1),  -- Nota do Aluno 5 na Disciplina 2
