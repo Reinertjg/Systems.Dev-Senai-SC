@@ -10,3 +10,13 @@ FROM Colaboradores /* Cria um texto concatenado
 Exemplo: A pessoa colaboradora Dr. Cauê da Conceição de cpf 24657139061 possui o seguinte endereço: Recanto Isadora Nunes/ MS
 */
 /* UPPER ou LOWER, deixam as letras maiuscula e minuscula */ 
+
+
+/* Utilizando Funções Data */
+/* Consulta somente o Ano e o Mes da coluna datainicio */
+SELECT ID_colaborador, STRFTIME('%Y/%M', datainicio) FROM Licencas;
+
+/* Colsunta o intervalo de tempo entre duas colunas de tipo Data */
+SELECT ID_colaborador, JULIANDAY (datatermino) - JULIANDAY (datacontratacao)
+FROM HistoriocoEmprego
+WHERE datatermino IS NOT NULL;

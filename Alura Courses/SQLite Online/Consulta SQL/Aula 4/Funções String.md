@@ -33,4 +33,3 @@ REPLACE é uma ferramenta poderosa para limpeza e formatação de dados, sendo c
 SUBSTR é amplamente utilizada para cortar e analisar partes de strings, especialmente quando combinada com outras funções como INSTR.
 No SQLite Online, essas funções podem ser usadas exatamente como descrito acima. Elas são essenciais para a manipulação de dados textuais, permitindo uma variedade de operações de limpeza, formatação, extração e substituição, facilitando assim a análise e a interpretação dos dados.
 
- DISCUTIR NO FÓRUM
