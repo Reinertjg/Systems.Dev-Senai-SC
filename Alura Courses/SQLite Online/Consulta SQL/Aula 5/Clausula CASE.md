@@ -1,11 +1,8 @@
 **Estrutura Básica**
 -----------------
-A cláusula CASE tem duas formas principais: a forma simples e a forma pesquisada.     
-  **1. Forma Simples:**      
-    ```CASE expressao    
-        WHEN valor1 THEN resultado1    
-        WHEN valor2 THEN resultado2   
-        ...    
-        ELSE resultado_padrao    
-    END```
+A cláusula CASE tem duas formas principais: a forma simples e a forma pesquisada.<br>
+  **1. Forma Simples:**<br>
+    ![SQL]([url_da_imagem](https://uploaddeimagens.com.br/imagens/mscJpXQ))
+
+    https://uploaddeimagens.com.br/imagens/mscJpXQ
     
