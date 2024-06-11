@@ -1,5 +1,5 @@
 
-/* EXpressao CASE */
+/* Expressao CASE */
 /* A expressao CASE cria condições para a consulta, junto criando uma nova coluna */
 SELECT id_colaborador, cargo, salario,
     CASE
@@ -9,3 +9,7 @@ SELECT id_colaborador, cargo, salario,
     END AS categoria_salario
 from HistoricoEmprego;
 
+
+/* Expressao Rename */
+/* Altera o nome da tabela */
+ALTER TABLE HistoricoEmprego RENAME TO CargosColaboradores;
