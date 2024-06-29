@@ -1,0 +1,28 @@
+/* Cores em CSS */
+body {
+    background-color: black;
+    color: #F6F6F6;
+}
+body {
+    background-color: purple;
+    color: #00ffff;
+}
+body {
+    background-color: #000000;
+    color: #F6F6F6;
+}
+
+/* Destacando Texto */
+/*  HTML
+    <h1>Formação de <span>Front-end</span></h1>
+*/
+/*  CSS */
+h1{
+    font-weight: bold;
+}
+
+span{
+    color: #22D4FD;
+    border: 1px solid #22D4FD;
+    padding: 10px;
+}
