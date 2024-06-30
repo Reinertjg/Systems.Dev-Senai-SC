@@ -1,0 +1,56 @@
+
+/*
+1 - Definindo o Tamanho da Seção de Texto
+Objetivo: Ajustar o tamanho de uma seção de texto para corresponder ao design no Figma.
+Passos:
+Adicionar uma nova classe, apresentacao__conteudo, à tag <section> no HTML.
+Definir a largura dessa seção usando a propriedade width no CSS, com base nas especificações do projeto no Figma.
+*/
+.apresentacao__conteudo {
+    width: 615px;
+    height: 482px;
+}
+
+
+/*
+2 - Ajustando Tamanhos de Títulos e Textos
+Objetivo: Modificar o tamanho dos textos de títulos e parágrafos para corresponder ao design no Figma.
+Passos:
+Criar classes específicas no HTML: apresentacao__conteudo__titulo para os títulos e apresentacao__conteudo__texto para os textos.
+Usar a propriedade font-size no CSS para definir os tamanhos de fonte para estas classes, utilizando os valores retirados do Figma.
+*/
+.apresentacao__conteudo_titulo {
+    font-family: "Krona One", sans-serif;
+    font-size: 36px;
+    line-height: 56px;
+}
+.apresentacao__conteudo_texto {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+
+
+/*
+3 - Importando e aplicando fontes do Google Fonts
+Para importar e aplicar as fontes "Krona One" e "Montserrat" do Google Fonts no seu projeto web:
+
+Utilize @import no seu arquivo CSS para importar as fontes.
+Aplique as fontes aos elementos desejados usando font-family, garantindo consistência e estética conforme especificado no design do seu projeto.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.apresentacao__conteudo__titulo {
+    font-family: 'Krona One', sans-serif;
+}
+
+.apresentacao__conteudo__texto {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
