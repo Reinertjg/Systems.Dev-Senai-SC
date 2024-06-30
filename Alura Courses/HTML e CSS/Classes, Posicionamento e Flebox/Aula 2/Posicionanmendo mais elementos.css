@@ -1,0 +1,47 @@
+ 
+ /* Define o Body como 100% da pagina  */
+ body {
+    height: 100vh; /* <-- */
+    background-color: #000000;
+    color: #F6F6F6;
+}
+
+
+/* Nao permite que as tags saiam para fora da pagina */
+body {
+    height: 100vh;
+    box-sizing: border-box; /* <-- */
+    background-color: #000000;
+    color: #F6F6F6;
+}
+
+/* Define a propriedade FLEXBOX */
+
+/* <main class="apresentacao"> */
+.apresentacao {
+    display: flex;
+}
+
+/* Pocemos efinir a direcao do Flex*/
+.container {
+    flex-direction: row;
+    flex-direction: row-reverse;
+    flex-direction: column;
+    flex-direction:column-reverse;
+  }
+
+  /* Define o alinhamento do Display */
+  .container {
+    align-items: stretch;
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    align-items: baseline;
+    align-items: first baseline;
+    align-items: last baseline;
+    align-items: start;
+    align-items: end;
+    align-items: self-start;
+    align-items: self-end;
+    align-items: unsafe;
+}

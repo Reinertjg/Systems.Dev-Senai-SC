@@ -1,0 +1,23 @@
+ /*
+1 - Ajustando a Altura da Tela com CSS
+Tarefa: Fazer o site ocupar 100% da altura da tela do usuário.
+Solução: Ajustar o elemento body no CSS para preencher toda a altura da tela usando height: 100vh.
+Teste: Verificar o resultado usando a ferramenta "Inspecionar" do navegador.
+*/
+
+body {
+    height: 100vh;
+}
+
+
+
+/*
+2 - Controlando o Tamanho de Elementos com Box Sizing
+Tarefa: Garantir que elementos filhos dentro do body não ultrapassem os limites ao adicionar bordas e paddings.
+Solução: Utilizar a propriedade box-sizing com o valor border-box no elemento body.
+Teste: Inspecionar o layout para garantir que os elementos filhos respeitem os limites do body e seus próprios tamanhos definidos.
+*/
+
+body {
+    box-sizing: border-box;
+}
