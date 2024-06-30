@@ -1,0 +1,23 @@
+
+/* Definindo Classe no HTML
+
+<strong class="titulo-destaque">com um Front-end de qualidade!</strong></h1>
+
+*/
+
+/* Estilizando os elementos da classe */
+body {
+    background-color: #000000;
+    color: #F6F6F6;
+}
+
+.titulo-destaque {
+    color: #22D4FD;
+}
+
+
+/* Resetando o CSS*/
+* {
+    margin: 0;
+    padding: 0;
+}

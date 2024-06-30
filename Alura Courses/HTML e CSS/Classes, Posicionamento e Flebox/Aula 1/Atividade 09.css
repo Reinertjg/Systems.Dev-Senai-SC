@@ -1,0 +1,84 @@
+/*
+1 - Estilizando Elementos com Classes CSS
+Tarefa: Criar uma classe "texto-destaque" para um elemento <p> no arquivo HTML.
+Objetivo: Estilizar a classe "texto-destaque" no CSS para alterar a cor do texto.
+Dica: Escolha cores que destaquem o texto, mantendo a legibilidade e harmonia com o design da página.
+*/
+
+/* <p class="titulo"> Este e o Titulo </p> */
+.titulo{
+    color: #FF5733;
+}
+
+
+
+/*
+2 - Destacando Títulos com CSS
+Tarefa: Criar uma classe "titulo-blog" para elementos <h1> no arquivo HTML.
+Objetivo: Estilizar a classe "titulo-blog" no CSS para mudar a cor do texto e destacar os títulos das postagens.
+*/
+
+/* <h1 class="titulo-blog"> Titulo </h1> */
+.titulo-blog{
+    color: #F8D7;
+    font-weight: bold;
+}
+
+
+
+/*
+3) Estilos Situacionais com Classes CSS
+Tarefa: Criar uma classe "urgente" para elementos <p> que contêm notícias urgentes.
+Objetivo: Estilizar a classe "urgente" no CSS para que o texto dos parágrafos seja vermelho, destacando as notícias urgentes.
+*/
+
+/* <p class="urgente"> Noticia Urgente </p> */
+.urgente{
+    color: red;
+}
+
+
+
+/*
+4) Entendendo e Aplicando o Reset CSS
+Tarefa: Aplicar um "reset CSS" para remover os estilos padrão do navegador.
+Objetivo: Utilizar o seletor universal * para definir a margem e o preenchimento de todos os elementos para 0.
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*
+5) Inspecionando Elementos e Entendimento do Modelo de Caixa
+Tarefa: Utilizar as ferramentas de desenvolvimento (DevTools) do navegador para inspecionar o modelo de caixa de um elemento do seu site.
+Objetivo: Compreender como as propriedades margin, border, padding e content afetam o elemento selecionado.
+*/
+
+.caixa {
+    margin: 10px;
+    border: 2px solid blue;
+    padding: 20px;
+    width: 100px;
+    height: 50px;
+}
+
+
+
+/*6) Aplicando o Modelo de Caixa na Prática
+Tarefa: Selecionar um elemento específico no projeto (por exemplo, um parágrafo) e ajustar as propriedades de margin, border, padding e content.
+Objetivo: Observar como cada alteração afeta o posicionamento e a aparência do elemento na página.
+*/
+
+/* <p class="ajuste-caixa">Este é um parágrafo de exemplo.</p> */
+
+.ajuste-caixa {
+    margin: 20px;               /* Espaço externo */
+    border: 3px solid green;  /* Borda */
+    padding: 15px;              /* Espaço interno */
+    width: 200px;               /* Largura do conteúdo */
+    height: auto;               /* Altura do conteúdo */
+}
