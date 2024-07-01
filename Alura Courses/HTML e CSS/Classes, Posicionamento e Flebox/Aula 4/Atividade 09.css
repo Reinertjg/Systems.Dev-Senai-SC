@@ -1,0 +1,83 @@
+/*
+1 - Espaçamento e Tamanho dos Botões
+Objetivo:
+Ajustar o tamanho e o espaçamento dos botões alinhados horizontalmente usando Flexbox, de acordo com o design do projeto
+*/
+
+.container {
+    display: flex;
+    justify-content: space-between; /* ou outra propriedade de alinhamento conforme necessário */
+  }
+  
+  button {
+    width: [largura desejada];
+    height: [altura desejada];
+    margin: [margem desejada];
+  }
+
+
+
+/*
+2 - Melhorando a Visibilidade dos Botões
+Objetivo:
+Aumentar a acessibilidade e visibilidade dos botões, facilitando a leitura e interação, conforme indicado por feedback.
+*/
+
+button {
+    background-color: #fdaf28;
+    width: 280px;
+    text-align: center; 
+    color: #000000;
+}
+
+
+
+/*
+3 - Criando uma Classe Comum para Botões
+Objetivo:
+Criar uma classe CSS comum para estilizar os botões "Instagram" e "GitHub" de acordo com o design no Figma.
+*/
+.apresentacao__conteudo_link_link {
+    background-color: #fdaf28;
+    width: 280px;
+    text-align: center;
+    border-radius: 16px;
+    padding: 16px 0;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    color: #000000;
+    transition: background-color 0.3s;
+}
+.apresentacao__conteudo_link_link:hover{
+    background-color: #fac66c;/* cor de fundo ao passar o mouse */
+}
+
+
+
+/*
+Resumo - Importando e Aplicando a Fonte Correta
+Objetivo:
+Importar a fonte Montserrat com peso 600 do Google Fonts e aplicá-la aos botões, ajustando a cor do texto e removendo o sublinhado padrão dos links para corresponder ao design no Figma.
+*/
+/* Importar a fonte Montserrat do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.common-button {
+  background-color: #FF5733; /* Cor de fundo conforme design */
+  color: white; /* Cor do texto */
+  font-family: 'Montserrat', sans-serif; /* Fonte importada */
+  font-weight: 600; /* Peso da fonte */
+  font-size: 16px; /* Tamanho do texto */
+  border-radius: 8px; /* Arredondamento dos vértices */
+  padding: 12px 24px; /* Espaçamento interno conforme necessário */
+  border: none; /* Remover borda padrão */
+  cursor: pointer; /* Mudar cursor ao passar o mouse */
+  text-decoration: none; /* Remover sublinhado */
+  transition: background-color 0.3s; /* Transição suave para mudanças de cor */
+}
+
+.common-button:hover {
+  background-color: #C70039; /* Cor de fundo ao passar o mouse */
+}
+
