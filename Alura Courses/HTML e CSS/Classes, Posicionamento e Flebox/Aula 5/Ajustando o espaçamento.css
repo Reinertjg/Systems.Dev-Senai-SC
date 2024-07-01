@@ -1,0 +1,15 @@
+
+/* flex-direction: */
+.apresentacao__conteudo {
+    width: 615px;
+    display: flex;
+    flex-direction: column; /* Direciona os flex em coluna */
+}
+
+/* Propriedade gap */
+.apresentacao__conteudo {
+    width: 615px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* gap controla o espaço entre os flex items. */
+}
