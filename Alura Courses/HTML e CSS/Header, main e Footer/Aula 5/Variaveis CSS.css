@@ -1,0 +1,26 @@
+ /* Para criar uma variavel no css */
+ /* Sintaxe */
+ :root {
+    --main-bg-color: brown;
+/*  nome da variavel: valor da  */
+}
+
+/* Exemplo: */
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --font-secundaria: 'Montserrat', sans-serif;
+}
+/* Variaveis em css, seram muito usadas para valores que se repetem
+muito ao longo do cogido, como cores, fonte e etc...*/
+/* Exemplo de aplicacao: */
+body {
+    /* height: 100vh; */
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-primaria);
+}
