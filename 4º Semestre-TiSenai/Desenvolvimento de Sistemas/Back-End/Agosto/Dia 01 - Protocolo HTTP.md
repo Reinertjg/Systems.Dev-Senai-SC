@@ -21,5 +21,6 @@
 
     ### **GET** = Obter
     ### **POST** = Criar
+    ### **PUT** = Criar/Atualizar
     ### **PATCH** = Atualizar
     ### **DELETE** = Excluit
