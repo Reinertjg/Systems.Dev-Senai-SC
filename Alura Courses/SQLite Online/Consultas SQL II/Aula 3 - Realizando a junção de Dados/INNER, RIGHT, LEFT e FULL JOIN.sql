@@ -17,7 +17,7 @@ on c.id = p.idcliente;
 -- Contexto: Identificar quais produtos foram vendidos ou não.
 
 SELECT pr.nome, ip.idproduto, ip.idpedido
-from itenspedidos ip
+FROM itenspedidos ip
 RIGHT JOIN produtos pr
 on pr.id = ip.idproduto
 
