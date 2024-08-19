@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-primaria: #222831;
+    --cor-segundaria: #31363F;
+    --cor-terciaria: #76ABAE;
+    --cor-quartenaria: #EEEEEE;
+
+    --fonte-primaria: "Krona one", sans-serif;
+    --fonte-segundaria: "Montserrat", sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(to right, var(--cor-primaria), var(--cor-segundaria));
+    color: var(--cor-quartenaria);
+}
+
+.cabecalho{
+    padding: 2% 0 0 15%;
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu_link{
+    font-family: var(--fonte-segundaria);
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    transition: color 0.5s, transform 0.5s;
+}
+.cabecalho__menu_link:hover{
+    color: var(--cor-quartenaria);
+    transform: scale(1.17);
+}
+
+.apresentacao{
+    padding: 4% 15%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.apresentacao__conteudo{
+    display: flex;
+    flex-direction: column;
+    width: 593px;
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 56px;
+    padding-bottom: 1%;
+    padding-top: 3%;
+}
+.titulo-destaque{
+    color: var(--cor-terciaria);
+}
+.apresentacao__conteudo__texto{
+    font-family: var(--fonte-segundaria);
+    font-weight: 400;
+    font-size: 150%;
+    line-height: 36px;
+}
+.apresentacao_conteudo_link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10% 0 0 0px;
+    gap: 25px;
+}
+.apresentacao_conteudo_link_subtitulo{
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 40px;
+}
+.apresentacao_conteudo_link_link {
+    width: 50%;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+}
+.apresentacao_conteudo_link_link:focus {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+.form .btn {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2.5em;
+}
+
+.button1 {
+    font-size: 19px;
+    padding: 0.5em;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-quartenaria);
+}
+
+.button1:hover {
+    background-color: black;
+    color: var(--cor-quartenaria);
+}
+
+.button2 {
+    font-size: 19px;
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-quartenaria);
+}
+
+.button2:hover {
+    background-color: black;
+    color: var(--cor-quartenaria);
+}
+
+.button3 {
+    font-size: 15px;
+    margin-bottom: 3em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-quartenaria);
+}
+
+.button3:hover {
+    background-color: red;
+    color: var(--cor-quartenaria);
+}
+
+.apresentacao_foto{
+    width: 40%;
+    height: 40%;
+    border-radius: 16px;
+    margin-bottom: 1%;
+    margin-top: 3%;
+}
+
+.rodape{
+    margin-top: auto;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-terciaria);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fonte-segundaria);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* Curriculo.html */
+.apresentacao_conteudo_curriculo{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Pagina selecionada */
+#selecionado{
+    color: var(--cor-quartenaria);
+}
+

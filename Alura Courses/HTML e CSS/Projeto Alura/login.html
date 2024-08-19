@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto HTML/CSS</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho__menu">
+            <a  class="cabecalho__menu_link" href="index.html">Home</a>
+            <a class="cabecalho__menu_link" href="about.html">Sobre mim</a>
+            <a class="cabecalho__menu_link" href="curriculo.html">Curriculo</a>
+            <a id="selecionado" class="cabecalho__menu_link" href="login.html">Login</a>
+        </nav>
+    </header>
+    <main class="apresentacao">
+        <section class="apresentacao__conteudo">
+            <h1 class="apresentacao__conteudo__titulo">Eleve seu negócio digital a outro nível <strong 
+            class="titulo-destaque">com um Front-end de qualidade!
+            </strong></h1>
+            
+            <div class="apresentacao_conteudo_link">
+                <h2 id="link_subtitulo" class="apresentacao_conteudo_link_subtitulo">Acesse sua conta</h2>
+                <input id="usuario" class="apresentacao_conteudo_link_link" type="text" autocomplete="off" name="text" class="input" placeholder="Username">
+                <input id="senha" class="apresentacao_conteudo_link_link" type="password" autocomplete="off" name="text" class="input" placeholder="Password">
+                <div class="btn">
+                  <button onclick="login()" class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                  <button class="button2">Sign Up</button>
+                </div>
+                <button class="button3">Forgot Password</button>
+            </div>
+        </section>
+        <img class="apresentacao_foto" src="https://cdn.openart.ai/stable_diffusion/31e44e73ec5d9ea4b89b4667143d7afea6802e36_2000x2000.webp" alt="Foto da John Willam">
+    </main>
+    <footer class="rodape">
+        <p>Desenvolvido por John Willam.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
