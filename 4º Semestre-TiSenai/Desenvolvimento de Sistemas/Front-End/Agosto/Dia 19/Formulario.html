@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=,, initial-scale=1.0">
+    <title>Formulario Elaborado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+
+        <header>    
+            <h1>Formulario</h1>
+        </header>
+
+        <main>
+
+            <div class="conteudo_pessoais">
+                <h4>Dados Pessoais</h4>
+                <p>Nome:</p>
+                <input type="text">
+                <p>Endereço:</p>
+                <input type="text">
+                <p>Cidade:</p>
+                <input type="text">
+                <p>Estado:</p>
+                <select name="Estado" id="estado">
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="PR">Parana</option>
+                    <option value="AP">Amapa</option>
+                </select>
+            </div>
+
+            <div class="conteudo_profissionais">
+                <h4>Dados Profissionais</h4>
+                <Div class="conteudo_profissionais_cargo">
+                    <p>Natureza de Cargo</p>
+                    <input type="radio" id="cargo_gerencia" name="cargo" value="gerencia">
+                    <label for="cargo_gerencia">Gerencia</label>
+                    <input type="radio" id="cargo_financeiro" name="cargo" value="financeiro">
+                    <label for="cargo_financeiro">Financeiro</label>
+                    <input type="radio" id="cargo_recepcao" name="cargo" value="recepcao">
+                    <label for="cargo_recepcao">Recepção</label>
+                    <input type="radio" id="cargo_administrativo" name="cargo" value="administrativo">
+                    <label for="cargo_administrativo">Administrativo</label>
+                    <input type="radio" id="cargo_juridico" name="cargo" value="juridico">
+                    <label for="cargo_juridico">Juridico</label>
+                </Div>
+            </div>
+            
+           
+        </main>
+
+        
+    </body>
+</html>
