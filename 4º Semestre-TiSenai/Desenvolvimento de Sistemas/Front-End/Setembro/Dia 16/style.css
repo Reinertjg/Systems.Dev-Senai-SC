@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-primaria: #222831;
+    --cor-segundaria: #31363F;
+    --cor-terciaria: #76ABAE;
+    --cor-quartenaria: #EEEEEE;
+
+    --fonte-primaria: "Krona one", sans-serif;
+    --fonte-segundaria: "Montserrat", sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(to right, var(--cor-primaria), var(--cor-segundaria));
+    color: var(--cor-quartenaria);
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 150px;
+}
+
+.pergunta {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10%;
+}
+
+.pergunta_conteudo {
+    color: var(--cor-quartenaria);
+    font-family: var(--fonte-primaria);
+    font-size: 72px;
+}
+
+/*.resposta_nav{
+    color: var(--cor-quartenaria);
+    font-family: var(--fonte-segundaria);
+    font-size: 32px;
+    text-decoration: none;
+}
+*/
+
+.resposta_nav {
+    font-size: 24px;
+    background-color: #008542;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+  }
+  
+  .resposta_nav:before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+    z-index: -1;
+    background-color: #008542 !important;
+    box-shadow: 0 -4px rgb(21 108 0 / 50%) inset,
+      0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset,
+      4px 0 rgb(21 108 0 / 50%) inset;
+  }
+  
+  .resposta_nav:after {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+    transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+  }
+  
+  .resposta_nav:hover:before {
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset,
+      -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+  }
+  
+  .resposta_nav:hover:after {
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+  }
+  
+  .resposta_nav:active {
+    transform: translateY(4px);
+  }
+  
+  .resposta_nav:active:after {
+    box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+  }
+  
