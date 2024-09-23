@@ -422,7 +422,7 @@ body {
 }
 
 /* Estilo inicial da imagem animada, fora da tela */
-.final_conteudo {
+.final_conteudo_direito {
     position: fixed;
     color: var(--cor-quartenaria);
     font-family: var(--fonte-quartenaria);  
