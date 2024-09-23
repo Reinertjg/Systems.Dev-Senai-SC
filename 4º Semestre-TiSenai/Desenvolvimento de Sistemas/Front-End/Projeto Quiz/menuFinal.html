@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo de estilo CSS -->
+</head>
+
+<body>
+
+    <!-- Cabeçalho com o temporizador e botão de retorno -->
+    <header class="cabecalho">
+        <div class="cabecalho_conteudo">
+            <a class="cabecalho_nav_return" href="index.html">Voltar ao menu</a>
+            <!-- Temporizador que começa em 15 segundos -->
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div class="conteudo_quiz">
+            <!-- Área da pergunta -->
+            <div class="conteudo_pergunta">
+                <h1 class="pergunta_titulo">Fim</h1> <!-- Título da pergunta -->
+                <p class="pergunta_conteudo">PONTUAÇÃO</p> <!-- Texto da pergunta -->
+            </div>
+
+            <!-- Respostas disponíveis para o usuário escolher -->
+            <div class="conteudo_respostas">
+                <nav class="respostas_nav">
+                    <!-- Cada resposta tem um evento 'onclick' que chama a função para acertos ou erros -->
+                    <h2 class="resultado_final">
+                        Acertos:
+                        <span id="acertos">0</span><br> <br> <!-- Exibe o número de erros -->
+                        Erros:
+                        <span id="erros">0</span><br> <br> <br> <br> <br> <br> <br> <br><!-- Exibe o número de erros -->
+                        Nota:
+                        <span id="media">0</span>
+                    </h2>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        // Variáveis para armazenar os acertos e erros do usuário, recuperadas do localStorage ou iniciadas em 0
+        let acertos = parseInt(localStorage.getItem("acertos"));
+        let erros = parseInt(localStorage.getItem("erros"));
+        console.log(localStorage.getItem("acertos"));
+        console.log(localStorage.getItem("erros"));
+
+
+        const perguntas = 9;
+        let porcentagem = 0;
+
+        document.getElementById("acertos").textContent = acertos;
+        document.getElementById("erros").textContent = erros;
+
+        porcentagem = ((acertos * 100) / perguntas).toFixed(1);
+        document.getElementById("media").textContent = porcentagem;
+    </script>
+
+</body>
+
+</html>
