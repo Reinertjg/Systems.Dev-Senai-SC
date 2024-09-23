@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face{
+    font-family: "MineFont";
+    src: url('/Quiz/fonts/Minecrafter.Reg.ttf');
+  }
+@font-face{
+    font-family: "MineFontChat";
+    src: url('/Quiz/fonts/minecraft_FontChat.ttf');
+}
+
+/* Animacao de subida */
+@keyframes slide-in-bottom{0%{transform:translateY(1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
+/* Animacao de descida */
+@keyframes puff-in-top{0%{transform:scale(2);transform-origin:50% 0;filter:blur(4px);opacity:0}100%{transform:scale(1);transform-origin:50% 0;filter:blur(0);opacity:1}}
+:root {
+    --cor-primaria: #222831;
+    --cor-segundaria: #31363F;
+    --cor-terciaria: #76ABAE;
+    --cor-quartenaria: #EEEEEE;
+
+    --fonte-primaria: "Krona one", sans-serif;
+    --fonte-segundaria: "Montserrat", sans-serif;
+    --fonte-terceira: "MineFont", sans-serif;
+    --fonte-quartenaria: "MineFontChat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-image: url(assets/Dirt_background.webp);
+    color: var(--cor-quartenaria);
+}
+
+.cabecalho_conteudo {
+    display: flex;
+    justify-content: center;
+
+}
+
+.cabecalho_timer {
+    padding: 10px 40px;
+    font-size: 15px;
+    font-family: var(--fonte-quartenaria    );
+    background-color: #333;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: .8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 0.7s cubic-bezier(0, .8, .26, .99);
+    position: fixed;
+}
+
+.cabecalho_timer::before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: .7s cubic-bezier(0, .8, .26, .99);
+    z-index: -1;
+    background-color: #ff0a0a !important;
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.cabecalho_nav {
+    display: flex;
+    justify-content: end;
+}
+
+.cabecalho_nav_return {
+    padding: 10px 40px;
+    font-size: 15px;
+    font-family: var(--fonte-quartenaria    );
+    background-color: #333;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: flex;
+    justify-content: start;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: .8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 0.7s cubic-bezier(0, .8, .26, .99);
+}
+
+.cabecalho_nav_return::before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: .7s cubic-bezier(0, .8, .26, .99);
+    z-index: -1;
+    background-color: #ff0a0a !important;
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.cabecalho_nav_return:after {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    box-shadow: 0 4px 0 0 rgba(61, 61, 61, 0.15);
+    transition: .7s cubic-bezier(0, .8, .26, .99);
+}
+
+.cabecalho_nav_return:hover:before {
+    box-shadow: 0 -4px rgba(0, 0, 0, 0.5) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.cabecalho_nav_return:hover:after {
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+.cabecalho_nav_return:active {
+    transform: translateY(4px);
+}
+
+.cabecalho_nav_return:active:after {
+    box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+}
+
+.conteudo_quiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    width: 60%;
+    padding-top: 50px;
+}
+
+.conteudo_pergunta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 25px;
+}
+
+.pergunta_titulo {
+    color: var(--cor-quartenaria);
+    font-family: var(--fonte-terceira); 
+    font-size: 36px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.pergunta_titulo_menu {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    animation: puff-in-top 5s;
+}
+
+.pergunta_conteudo {
+    color: var(--cor-quartenaria);
+    font-family: var(--fonte-quartenaria);
+    font-size: 150%;
+    text-align: center;
+}
+
+
+/*.resposta_nav{
+    color: var(--cor-quartenaria);
+    font-family: var(--fonte-segundaria);
+    font-size: 32px;
+    text-decoration: none;
+}
+*/
+
+.conteudo_respostas {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 200px;
+}
+
+.respostas_nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.resposta_nav_conteudo {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-family: var(--fonte-quartenaria);
+    background-color: #333;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: .8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 0.7s cubic-bezier(0, .8, .26, .99);
+    width: 170%;
+}
+
+.resposta_nav_conteudo:before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: .7s cubic-bezier(0, .8, .26, .99);
+    z-index: -1;
+    background-color: #5c5c5c !important;
+    box-shadow: 0 -4px rgba(50, 50, 50, 0.5) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.resposta_nav_conteudo:after {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    box-shadow: 0 4px 0 0 rgba(61, 61, 61, 0.15);
+    transition: .7s cubic-bezier(0, .8, .26, .99);
+}
+
+.resposta_nav_conteudo:hover:before {
+    box-shadow: 0 -4px rgba(0, 0, 0, 0.5) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.resposta_nav_conteudo:hover:after {
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+.resposta_nav_conteudo:active {
+    transform: translateY(4px);
+}
+
+.resposta_nav_conteudo:active:after {
+    box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
+
+/* CSS para a resposta erradada */
+.resposta-errada {
+    padding: 10px 40px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: .8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 2s cubic-bezier(0, .8, .26, .99);
+    width: 170%;
+}
+
+.resposta-errada:before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: 2s cubic-bezier(0, .8, .26, .99);
+    z-index: -1;
+    background-color: #ff0d00 !important;
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+/* CSS para a resposta correta */
+.resposta-correta {
+    padding: 10px 40px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: unset;
+    padding: .8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 2s cubic-bezier(0, .8, .26, .99);
+    width: 170%;
+}
+
+.resposta-correta:before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: 2s cubic-bezier(0, .8, .26, .99);
+    z-index: -1;
+    background-color: #71ff2a !important;
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.bloqueoTela {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Certifique-se de que a sobreposição esteja acima de todos os outros elementos */
+    display: none; /* Inicialmente escondido */
+}
+
+/* Quando a tela estiver congelada, previne interação */
+.bloqueoTela.active {
+    display: block; /* Exibe o overlay */
+    pointer-events: all; /* Impede clique em outros elementos */
+}
+
+/* Estilo inicial da imagem animada, fora da tela */
+.gif-animada {
+    position: fixed;
+    bottom: -100px; /* Inicialmente, a imagem está fora da tela */  
+    transform: translateX(-50%); /* Centraliza a imagem */
+    width: 100px; /* Defina o tamanho da imagem */
+    animation: slide-in-bottom 0.5s;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+}
+
+/* Classe que será adicionada para iniciar a animação */
+.gif-animada.ativa {
+    bottom: 15px; /* A imagem sobe para esta posição quando ativa */
+    opacity: 1;
+    animation: slide-in-bottom 0.5s forwards;
+    align-items: center;
+    display: block;
+}
+
+.conteudo_final {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo inicial da imagem animada, fora da tela */
+.final_conteudo {
+    position: fixed;
+    color: var(--cor-quartenaria);
+    font-family: var(--fonte-quartenaria);  
+    bottom: -100px; /* Inicialmente, a imagem está fora da tela */  
+    transform: translateX(-50%); /* Centraliza a imagem */
+    width: 100px; /* Defina o tamanho da imagem */
+    animation: slide-in-bottom 1s;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+}
+
+/* Classe que será adicionada para iniciar a animação */
+.final_conteudo_direito.ativa{
+    bottom: 50px; /* A imagem sobe para esta posição quando ativa */
+    opacity: 1;
+    animation: slide-in-bottom 0.5s forwards;
+    right: 39%; 
+    display: block;
+}
+
+.final_conteudo_esquerdo {
+    position: fixed;
+    color: var(--cor-quartenaria);
+    font-family: var(--fonte-quartenaria);
+    bottom: -100px; /* Inicialmente, a imagem está fora da tela */  
+    transform: translateX(-50%); /* Centraliza a imagem */
+    width: 100px; /* Defina o tamanho da imagem */
+    animation: slide-in-bottom 0.5s;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+}
+
+/* Classe que será adicionada para iniciar a animação */
+.final_conteudo_esquerdo.ativa{
+    bottom: 50px; /* A imagem sobe para esta posição quando ativa */
+    opacity: 1;
+    animation: slide-in-bottom 0.5s forwards;
+    left: 41%;
+    display: block;
+}
+
+.resultado_final {
+    padding: 10px 40px;
+    font-size: 15px;
+    font-family: var(--fonte-quartenaria    );
+    background-color: #333;
+    color: #fff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: .8rem 1.5rem;
+    text-decoration: none;
+    transition: all 0.7s cubic-bezier(0, .8, .26, .99);
+    position: fixed;
+    height: 25%;
+    width: 10%;
+}
+
+.resultado_final::before {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: .7s cubic-bezier(0, .8, .26, .99);
+    z-index: -1;
+    background-color: #5c5c5c!important;
+    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
