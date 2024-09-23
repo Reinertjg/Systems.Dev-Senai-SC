@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo de estilo CSS -->
+</head>
+
+<body>
+
+    <!-- Cabeçalho com o temporizador e botão de retorno -->
+    <header class="cabecalho">
+        <div class="cabecalho_conteudo">
+            <h2 class="cabecalho_timer" id="timer15">00:15</h2> <!-- Temporizador que começa em 15 segundos -->
+        </div>
+        <nav class="cabecalho_nav">
+            <a class="cabecalho_nav_return" href="index.html">X</a> <!-- Link para voltar ao início -->
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <div class="conteudo_quiz">
+            <!-- Área da pergunta -->
+            <div class="conteudo_pergunta">
+                <h1 class="pergunta_titulo">Pergunta 5</h1> <!-- Título da pergunta -->
+                <p class="pergunta_conteudo">Qual é o Final Boss do Minecraft ?</p> <!-- Texto da pergunta -->
+            </div>
+
+            <!-- Respostas disponíveis para o usuário escolher -->
+            <div class="conteudo_respostas">
+                <nav class="respostas_nav">
+                    <!-- Cada resposta tem um evento 'onclick' que chama a função para acertos ou erros -->
+                    <a class="resposta_nav_conteudo" onclick="addAcertos(this)"  id="respostaCerta">
+                        Ender Dragon <!-- Esta é a resposta correta -->
+                    </a>
+                    <a class="resposta_nav_conteudo" onclick="addErros(this)" id="respostaErradas1">
+                        Whiter
+                    </a>
+                    <a class="resposta_nav_conteudo" onclick="addErros(this)" id="respostaErradas2">
+                        Warden
+                    </a>
+                    <a class="resposta_nav_conteudo" onclick="addErros(this)" id="respostaErradas3">
+                        Herobrine
+                    </a> 
+                </nav>
+            </div>
+
+            <!-- Área que exibe se a resposta está correta ou errada -->
+            <div class="conteudo_final">
+                <p class="final_conteudo_direito" id="Acertou_errou_direito"></p> <!-- Mostra "Acertou" ou "Errou" -->
+                <p class="final_conteudo_esquerdo" id="Acertou_errou_esquerdo"></p> <!-- Segundo campo para exibir "Acertou" ou "Errou" -->
+            </div>
+        </div>
+        
+        <!-- Div usada para bloquear a tela após a resposta -->
+        <div id="bloqueo" class="bloqueoTela"></div>
+
+        <!-- Imagens animadas que aparecem após responder -->
+        <img src="assets/esmeraldGif.gif" id="gifAnimada_acertou" class="gif-animada" alt="gif de congratulação">
+        <img src="assets/totemGif.gif" id="gifAnimada_errou" class="gif-animada" alt="gif de erro">
+ 
+    </main>
+
+    <script>
+        let tempoConometro = 15;
+
+        // Variáveis para armazenar os acertos e erros do usuário, recuperadas do localStorage ou iniciadas em 0
+        let acertos = parseInt(localStorage.getItem("acertos")) || 0;
+        let erros = parseInt(localStorage.getItem("erros")) || 0;
+
+        // Função para formatar o tempo em minutos e segundos (MM:SS)
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60); // Calcula os minutos
+            const remainingSeconds = seconds % 60;    // Calcula os segundos restantes
+            return `${minutes.toString().padStart(2, "0")}:${remainingSeconds.toString().padStart(2, "0")}`;
+        }
+
+        // Função para atualizar o temporizador a cada segundo
+        function updateCountdown() {
+            const timerElement = document.getElementById("timer15");
+            timerElement.textContent = formatTime(tempoConometro); // Atualiza o elemento do temporizador com o tempo formatado
+
+            if (tempoConometro > 0) {
+                tempoConometro--; // Diminui o tempo a cada segundo
+            } else {
+                // Quando o tempo acabar
+                clearInterval(countdownInterval); // Para o temporizador
+                timerElement.textContent = "Tempo esgotado!";
+
+                // Exibe o bloqueio de tela
+                const bloqueoTela = document.getElementById("bloqueo");
+                bloqueoTela.classList.add("active");
+
+                // Marca a resposta correta automaticamente após o tempo se esgotar
+                const respostaCerta = document.getElementById("respostaCerta");
+                respostaCerta.classList.add("resposta-correta");
+
+                // Array que armazena os elementos das respostas erradas
+                const respostasErradas = [
+                    document.getElementById("respostaErradas1"),
+                    document.getElementById("respostaErradas2"),
+                    document.getElementById("respostaErradas3")
+                ];
+
+                // Aplica a classe "resposta-errada" a cada uma das respostas erradas usando forEach
+                respostasErradas.forEach(resposta => resposta.classList.add("resposta-errada"));
+
+
+                // Incrementa os erros
+                erros++;
+                localStorage.setItem("erros", erros); // Salva o número de erros no localStorage
+
+                // Redireciona para a próxima pergunta após 2 segundos
+                setTimeout(() => {
+                    window.location.href = "pergunta6.html"; 
+                }, 2000);
+            }
+        }
+
+        // Define o intervalo para atualizar o temporizador a cada segundo
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Função chamada ao clicar na resposta correta
+        function addAcertos(element) {
+            acertos++; // Incrementa o número de acertos
+            localStorage.setItem("acertos", acertos); // Salva o número de acertos no localStorage
+            
+            // Exibe o GIF de congratulação
+            const gifAnimada_acertou = document.getElementById("gifAnimada_acertou");
+            gifAnimada_acertou.classList.add("ativa");
+
+            document.getElementById("Acertou_errou_direito").textContent = "Acertou";
+            document.getElementById("Acertou_errou_esquerdo").textContent = "Acertou"; // Exibe "Acertou" na tela
+
+            // Adiciona a classe de estilo para destacar a resposta correta
+            element.classList.add("resposta-correta");
+
+            // Exibe o bloqueio de tela
+            const bloqueoTela = document.getElementById("bloqueo");
+            bloqueoTela.classList.add("active");
+
+            // Anima o texto de "Acertou"
+            const acertouOuErrou = document.getElementById("Acertou_errou_direito");
+            const acertouOuErrou2 = document.getElementById("Acertou_errou_esquerdo");
+            acertouOuErrou.classList.add("ativa");
+            acertouOuErrou2.classList.add("ativa");
+
+            
+
+            // Redireciona para a próxima pergunta após 2 segundos
+            setTimeout(() => {
+                window.location.href = "pergunta6.html";
+            }, 2000);
+        }
+
+        // Função chamada ao clicar em uma resposta errada
+        function addErros(element) {
+            erros++; // Incrementa o número de erros
+            localStorage.setItem("erros", erros); // Salva o número de erros no localStorage
+            document.getElementById("Acertou_errou_direito").textContent = "Errou";
+            document.getElementById("Acertou_errou_esquerdo").textContent = "Errou"; // Exibe "Errou" na tela
+
+            // Adiciona a classe de estilo para destacar a resposta errada
+            element.classList.add("resposta-errada");
+
+            // Exibe o GIF de erro
+            const gifAnimada_errou = document.getElementById("gifAnimada_errou");
+            gifAnimada_errou.classList.add("ativa");
+
+            // Exibe o bloqueio de tela
+            const bloqueoTela = document.getElementById("bloqueo");
+            bloqueoTela.classList.add("active");
+
+            // Exibe o texto "Errou"
+            const acertouOuErrou = document.getElementById("Acertou_errou_direito");
+            const acertouOuErrou2 = document.getElementById("Acertou_errou_esquerdo");
+            acertouOuErrou.classList.add("ativa");
+            acertouOuErrou2.classList.add("ativa");
+
+            // Destaca a resposta correta quando o usuário erra
+            const respostaCerta = document.getElementById("respostaCerta");
+            respostaCerta.classList.add("resposta-correta");
+
+            
+
+            // Redireciona para a próxima pergunta após 2 segundos
+            setTimeout(() => {
+                window.location.href = "pergunta6.html";
+            }, 2000);
+        }
+
+    </script>
+
+</body>
+
+</html>
