@@ -30,11 +30,11 @@ VLNOTFIS
 
 Tamanho
 -
-Lenght 10  Decimals 2
-Lê-se numeérico de 10 sendo 2 casas decimais.
-99.999.999,99
+Lenght 10  Decimals 2.  
+Lê-se numeérico de 10 sendo 2 casas decimais.  
+99.999.999,99  
 
 
-Lenght 8 Decimals 3
-Lê-se numeérico de 8 sendo 3 casas decimais.
-99.999,999
+Lenght 8 Decimals 3.  
+Lê-se numeérico de 8 sendo 3 casas decimais.  
+99.999,999  
